@@ -25,8 +25,12 @@ const ModalCompra = (props) =>{
                     {props.categoria.nome}
                     
                     <img src={props.foto} alt="" width='400vw' />
-                        <Button variant="primary" type="submit">
-                            COMPRAR
+                    
+                        <Button variant="secondary" type="submit">
+                            ADICIONAR CARRINHO 
+                        </Button>
+                        <Button variant="success" type="submit" >
+                            FINALIZAR COMPRA
                         </Button>
                 </Modal.Body>
             </Modal>

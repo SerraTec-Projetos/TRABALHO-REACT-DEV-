@@ -7,6 +7,7 @@ import './styles.css'
 import Footer from '../Footer';
 import ModalCompra from '../ModalCompra';
 import { isAccordionItemSelected } from 'react-bootstrap/esm/AccordionContext';
+import List from '../Carrinho';
 
 const Home = () => {
 
@@ -29,6 +30,7 @@ const Home = () => {
     <>
     <div className="body">
      <Header/>
+     <List/>
      <h1>Produtos</h1>
       <div className='container container-produtos'>
         {produto && produto.map((item, index) => { return(
