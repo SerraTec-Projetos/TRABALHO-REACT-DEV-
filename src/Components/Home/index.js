@@ -5,11 +5,14 @@ import axios from 'axios'
 import React, { Component } from "react";
 import './styles.css'
 import Footer from '../Footer';
+import ModalCompra from '../ModalCompra';
+import { isAccordionItemSelected } from 'react-bootstrap/esm/AccordionContext';
 
 const Home = () => {
 
   const [produto, setProduto] = useState([])
   console.log(produto)
+  
 
   const getProduto = async () => {
     const { data } = await axios.get('http://localhost:8080/produtos')
@@ -21,7 +24,7 @@ const Home = () => {
     getProduto();
   }, [])
 
-
+  
   return (
     <>
     <div className="body">
@@ -34,13 +37,15 @@ const Home = () => {
           <Card.Body>
             <Card.Title>{item.nome}</Card.Title>
           <Card.Text>
+            
             <p>VALOR:</p> {item.valorUnitario} <br/>
             <p>CATEGORIA:</p>{item.categoria.nome}
           </Card.Text>
-          <button 
-                      className="btn btn-danger green"
-                      onClick={ () => addItem( index, 1 ) }>+1
-                    </button>
+                <ModalCompra id={item.id} 
+                nome={item.nome} 
+                valorUnitario={item.valorUnitario} 
+                categoria={item.categoria.nome}
+                foto={item.foto}/> 
           </Card.Body>
         </Card>) } ) }
         <br />
