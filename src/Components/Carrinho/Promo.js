@@ -11,10 +11,12 @@ class Promo extends Component {
           {ids.map( (item, index ) => {
             return ( 
                   <li className="list-group-item">
+                    
                     <div className="row">
                       <img src={fotos[index]} alt={nomes[index]} width={120}/>
                       <div className="col-md-9 col-md-offset-1">{nomes[index]} <br/>Preço: {precos[index]}
                     </div>
+
                     <button 
                       className="btn btn-success"
                       onClick={ () => addItem( index, 2 ) }>adicionar

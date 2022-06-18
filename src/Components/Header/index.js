@@ -1,5 +1,9 @@
 import {Buttom, Nav, Container, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 import ModalLogin from '../ModalLogin';
+import Filter from '../Filter';
+
+
 
 const Header = () => {
 
@@ -7,19 +11,21 @@ const Header = () => {
 
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{  height: '80px' }}>
         <Container>
-        <Navbar.Brand href="#home">SANDALLIANDO</Navbar.Brand >
+        <Link to='/'>
+          <button>SANDALLIANDO</button>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">QUEM SOMOS</Nav.Link>
-            <Nav.Link href="#pricing">AJUDA</Nav.Link>
+            <Link to='/quemsomos/' >
+            <button>QUEM SOMOS</button>
+            </Link>
+            <Link to='/faleconosco/'>
+              <button>FALE CONOSCO</button>
+            </Link>
           </Nav>
           <Nav>
-            {/* <Nav.Link href="#deets">More deets</Nav.Link> */}
             <ModalLogin/>
-            <Nav.Link eventKey={2} href="#memes"> 
-              Dank memes
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
         </Container>

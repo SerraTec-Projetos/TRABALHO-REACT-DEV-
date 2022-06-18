@@ -8,6 +8,8 @@ import Footer from '../Footer';
 import ModalCompra from '../ModalCompra';
 import { isAccordionItemSelected } from 'react-bootstrap/esm/AccordionContext';
 import List from '../Carrinho';
+import Filter from '../Filter';
+// import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
 
@@ -32,6 +34,9 @@ const Home = () => {
      <Header/>
      <List/>
      <h1>Produtos</h1>
+     <div>
+      <Filter/>
+     </div>
       <div className='container container-produtos'>
         {produto && produto.map((item, index) => { return(
         <Card key={index} style={{ width: '14rem' }} className= 'card-produto'>
